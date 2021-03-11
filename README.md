@@ -31,6 +31,12 @@ config and manage extra settings using just the django admin.
 All these settings are optional, if not defined in ``settings.py`` the default values (listed below) will be used.
 
 ```python
+# if True the template tag will fallback to os environ,
+# very useful to retrieve env.
+EXTRA_SETTINGS_FALLBACK_TO_CONF_ENV = True
+```
+
+```python
 # if True the template tag will fallback to django.conf.settings,
 # very useful to retrieve conf settings such as DEBUG.
 EXTRA_SETTINGS_FALLBACK_TO_CONF_SETTINGS = True
