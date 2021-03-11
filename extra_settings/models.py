@@ -65,7 +65,7 @@ class Setting(models.Model):
     # TYPE_HTML = 'html' # TODO
     TYPE_IMAGE = 'image'
     TYPE_INT = 'int'
-    # TYPE_JSON = 'json' # TODO
+    TYPE_JSON = 'json'
     TYPE_STRING = 'string'
     TYPE_TEXT = 'text'
     TYPE_TIME = 'time'
@@ -85,7 +85,7 @@ class Setting(models.Model):
         # (TYPE_HTML, TYPE_HTML, ),
         (TYPE_IMAGE, TYPE_IMAGE),
         (TYPE_INT, TYPE_INT),
-        # (TYPE_JSON, TYPE_JSON, ),
+        (TYPE_JSON, TYPE_JSON, ),
         (TYPE_STRING, TYPE_STRING),
         (TYPE_TEXT, TYPE_TEXT),
         (TYPE_TIME, TYPE_TIME),
@@ -153,6 +153,11 @@ class Setting(models.Model):
     value_int = models.IntegerField(
         blank=True,
         default=0,
+        verbose_name=_('Value'),
+    )
+    value_json = models.JSONField(
+        blank=True,
+        default=dict,
         verbose_name=_('Value'),
     )
     value_string = models.CharField(
