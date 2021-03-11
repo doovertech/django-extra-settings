@@ -33,7 +33,9 @@ class Setting(models.Model):
 
     @staticmethod
     def _get_from_env(name):
-        return environ.get(name, None)
+        if settings.EXTRA_SETTINGS_FALLBACK_TO_CONF_ENV:
+            return environ.get(name, None)
+        return None
 
     @staticmethod
     def _get_from_settings(name):
