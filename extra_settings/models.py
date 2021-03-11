@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 
+from os import environ
 from decimal import Decimal
 
 from django.conf import settings
@@ -31,6 +32,10 @@ class Setting(models.Model):
             return None
 
     @staticmethod
+    def _get_from_env(name):
+        return environ.get(name, None)
+
+    @staticmethod
     def _get_from_settings(name):
         if settings.EXTRA_SETTINGS_FALLBACK_TO_CONF_SETTINGS:
             return getattr(settings, name, None)
@@ -42,9 +47,11 @@ class Setting(models.Model):
         if val is None:
             val = cls._get_from_database(name)
             if val is None:
-                val = cls._get_from_settings(name)
+                val = cls._get_from_env(name)
                 if val is None:
-                    val = default
+                    val = cls._get_from_settings(name)
+                    if val is None:
+                        val = default
         return val
 
     TYPE_BOOL = 'bool'
