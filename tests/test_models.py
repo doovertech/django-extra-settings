@@ -24,7 +24,7 @@ class ExtraSettingsModelsTestCase(TestCase):
             Setting(name='TEST_SETTING_STRING', value_type=Setting.TYPE_STRING),
             Setting(name='TEST_SETTING_TEXT', value_type=Setting.TYPE_TEXT),
             Setting(name='TEST_SETTING_TIME', value_type=Setting.TYPE_TIME),
-            # Setting(name='TEST_SETTING_UUID', value_type=Setting.TYPE_UUID),
+            Setting(name='TEST_SETTING_UUID', value_type=Setting.TYPE_UUID),
             Setting(name='TEST_SETTING_URL', value_type=Setting.TYPE_URL),
         ])
 

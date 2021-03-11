@@ -11,7 +11,7 @@ class SettingAdmin(admin.ModelAdmin):
     form = SettingForm
     value_fields_names = ('value_bool', 'value_date', 'value_datetime', 'value_decimal', 'value_duration',
                           'value_email', 'value_file', 'value_float', 'value_image', 'value_int', 'value_string',
-                          'value_text', 'value_time', 'value_url')
+                          'value_text', 'value_time', 'value_uuid', 'value_url')
     search_fields = ('name', )
     list_display = ('name', 'value_type') + value_fields_names
     list_filter = ('value_type', )
