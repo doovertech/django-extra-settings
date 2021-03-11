@@ -9,13 +9,10 @@ from django.conf import settings
 from django.db import models
 from django.utils.encoding import force_text
 
-from six import python_2_unicode_compatible
-
 from extra_settings.cache import get_cached_setting, set_cached_setting
 from extra_settings.translation import gettext_lazy as _
 
 
-@python_2_unicode_compatible
 class Setting(models.Model):
     @staticmethod
     def _get_from_cache(name):
