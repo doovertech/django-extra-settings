@@ -63,7 +63,7 @@ class Setting(models.Model):
     TYPE_STRING = 'string'
     TYPE_TEXT = 'text'
     TYPE_TIME = 'time'
-    # TYPE_UUID = 'uuid' # TODO
+    TYPE_UUID = 'uuid'
     TYPE_URL = 'url'
 
     TYPE_CHOICES = (
@@ -83,7 +83,7 @@ class Setting(models.Model):
         (TYPE_STRING, TYPE_STRING),
         (TYPE_TEXT, TYPE_TEXT),
         (TYPE_TIME, TYPE_TIME),
-        # (TYPE_UUID, TYPE_UUID),
+        (TYPE_UUID, TYPE_UUID),
         (TYPE_URL, TYPE_URL),
     )
 
@@ -163,11 +163,11 @@ class Setting(models.Model):
         null=True,
         verbose_name=_('Value'),
     )
-    # value_uuid = models.UUIDField(
-    #     blank=True,
-    #     null=True,
-    #     verbose_name=_('Value'),
-    # )
+    value_uuid = models.UUIDField(
+        blank=True,
+        null=True,
+        verbose_name=_('Value'),
+    )
     value_url = models.URLField(
         blank=True,
         verbose_name=_('Value'),
