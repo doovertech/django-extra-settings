@@ -20,7 +20,7 @@ class ExtraSettingsModelsTestCase(TestCase):
             # Setting(name='TEST_SETTING_HTML', value_type=Setting.TYPE_HTML),
             Setting(name='TEST_SETTING_IMAGE', value_type=Setting.TYPE_IMAGE),
             Setting(name='TEST_SETTING_INT', value_type=Setting.TYPE_INT),
-            # Setting(name='TEST_SETTING_JSON', value_type=Setting.TYPE_JSON),
+            Setting(name='TEST_SETTING_JSON', value_type=Setting.TYPE_JSON),
             Setting(name='TEST_SETTING_STRING', value_type=Setting.TYPE_STRING),
             Setting(name='TEST_SETTING_TEXT', value_type=Setting.TYPE_TEXT),
             Setting(name='TEST_SETTING_TIME', value_type=Setting.TYPE_TIME),
