@@ -7,7 +7,7 @@ from decimal import Decimal
 
 from django.conf import settings
 from django.db import models
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from extra_settings.cache import get_cached_setting, set_cached_setting
 from extra_settings.translation import gettext_lazy as _
@@ -206,4 +206,4 @@ class Setting(models.Model):
         verbose_name_plural = _('Settings')
 
     def __str__(self):
-        return force_text(f'{self.name} [{self.value_type}]')
+        return force_str(f'{self.name} [{self.value_type}]')
